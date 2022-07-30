@@ -1,12 +1,14 @@
 class Solution {
 public:
-    int ans(int n,vector<int> &dp){
-        if(n<=1) return n;
-        if(dp[n]!=-1) return dp[n];
-        return dp[n] = ans(n-1,dp) + ans(n-2,dp);
-    }
     int fib(int n) {
-        vector<int> dp(n+1,-1);
-        return ans(n,dp);
+        if(n<=1) return n;
+        int prev2=0;
+        int prev=1;
+        for(int i=2;i<=n;i++){
+            int curi=prev+prev2;
+            prev2=prev;
+            prev=curi;
+        }
+        return prev;
     }
 };
