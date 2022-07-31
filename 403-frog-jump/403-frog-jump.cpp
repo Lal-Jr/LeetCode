@@ -4,9 +4,9 @@ bool canCross(vector<int>& stones) {
     int n = stones.size();
     vector<vector<bool>> dp(n,vector<bool>(n+1,false));
     dp[0][0] = true;
-    for(int i=1;i<n;i++) {
-        if(stones[i] -stones[i-1] >i) return false;
-    }
+    // for(int i=1;i<n;i++) {
+    //     if(stones[i] -stones[i-1] >i) return false;
+    // }
     
     for(int i=1;i<n;i++){
         for(int j=i-1;j>=0;j--){
